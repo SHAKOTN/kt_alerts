@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+  kt_producer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: [ "java", "-jar", "-Djava.security.egd=file:/dev/./urandom", "/app/helloworld.jar" ]
+    restart: on-failure:5
+#    volumes:
+#      - .:/app
